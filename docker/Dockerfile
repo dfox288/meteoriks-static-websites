@@ -9,3 +9,4 @@ COPY ./2018.meteoriks.org /app/2018.meteoriks.org
 COPY ./2019.meteoriks.org /app/2019.meteoriks.org
 COPY ./2020.meteoriks.org /app/2020.meteoriks.org
 COPY ./2021.meteoriks.org /app/2021.meteoriks.org
+COPY ./2022.meteoriks.org /app/2022.meteoriks.org
