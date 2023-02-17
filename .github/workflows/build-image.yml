@@ -33,7 +33,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            dfox288/meteoriks-2015-2021-websites
+            dfox288/meteoriks-static-websites
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
@@ -59,10 +59,10 @@ jobs:
           ssh-add - <<< '${{ secrets.TUM_METEORIKS_K8S_PRIVATE_KEY }}'
           git clone git@github.com:dfox288/tum-cluster-meteoriks-websites_k8s.git manifests
           cd manifests
-          files_to_update="2015-2021.meteoriks.org/meteoriks-2015-2021-website-deployment.yaml"
+          files_to_update="static.meteoriks.org/meteoriks-static-websites-deployment.yaml"
           echo $files_to_update
           for file in $files_to_update; do
-          repo=dfox288/meteoriks_static_websites_2015-2021
+          repo=dfox288/meteoriks-static-websites
           sed -i "s/${repo//\//\\/}:.*/${repo//\//\\/}:${{ github.sha }}/g" $file;
           done
           git config --global user.email "info@tastatur-und-maus.net"
